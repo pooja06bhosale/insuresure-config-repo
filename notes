@@ -1,0 +1,13 @@
+ Config Repo is a central place (usually a Git repository)
+ where you store all the configuration files (.yml or .properties) for your microservices,
+ instead of keeping them inside each service’s application.yml or application.properties.
+
+
+ ✅ Simplifies CI/CD
+ When deploying, services just pull their config from Config Server.
+ No need to manage configs in each service's build.
+
+ 📦 Config Repo (Git) → 📡 Config Server (Spring Cloud Config) → 📱 Microservices
+ ✔️ Microservices at startup connect to Config Server via bootstrap.yml
+ ✔️ Config Server fetches configs from the Git repo (Config Repo)
+ ✔️ Config Server sends configs to microservices
